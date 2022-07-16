@@ -8,6 +8,8 @@ import 'homePage/homepage.dart';
 import 'votingPage/votingpage.dart';
 import './classes/myMetrics.dart';
 
+//TEST GIT AGAIN USING GIT BASH THIS TIME
+
 void main() {
   runApp(MyApp());
 }
