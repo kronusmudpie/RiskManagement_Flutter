@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import '../classes/MetricsDB.dart';
 
 class AddMetric extends StatefulWidget {
   @override
@@ -10,6 +11,41 @@ class AddMetric extends StatefulWidget {
 }
 
 class _AddMetricState extends State<AddMetric> {
+  final _titleController = TextEditingController();
+  final _minRiskController = TextEditingController();
+  final _lowRiskController = TextEditingController();
+  final _reasonableRiskController = TextEditingController();
+  final _highRiskController = TextEditingController();
+
+  bool checkIfInputComplete() {
+    if (_titleController.text.isEmpty ||
+        _minRiskController.text.isEmpty ||
+        _lowRiskController.text.isEmpty ||
+        _reasonableRiskController.text.isEmpty ||
+        _highRiskController.text.isEmpty) {
+      print("incomplete");
+      return false;
+    }
+    return true;
+  }
+
+  void addToMetricDB() {
+    if (checkIfInputComplete()) {
+      MetricsDB.addToMetric(
+          _titleController.text,
+          _minRiskController.text,
+          _lowRiskController.text,
+          _reasonableRiskController.text,
+          _highRiskController.text);
+
+      _titleController.text = "";
+      _minRiskController.text = "";
+      _lowRiskController.text = "";
+      _reasonableRiskController.text = "";
+      _highRiskController.text = "";
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -44,8 +80,11 @@ class _AddMetricState extends State<AddMetric> {
                 Column(
                   children: [
                     Padding(
-                      padding: EdgeInsets.symmetric(horizontal: 8, vertical: 16),
+                      padding:
+                          EdgeInsets.symmetric(horizontal: 8, vertical: 16),
                       child: TextField(
+                        maxLength: 50,
+                        controller: _titleController,
                         decoration: InputDecoration(
                           border: OutlineInputBorder(),
                           hintText: 'Enter a metric title',
@@ -53,9 +92,11 @@ class _AddMetricState extends State<AddMetric> {
                       ),
                     ),
                     Padding(
-                      padding:
-                          const EdgeInsets.symmetric(horizontal: 8, vertical: 16),
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 8, vertical: 16),
                       child: TextFormField(
+                        maxLength: 100,
+                        controller: _minRiskController,
                         decoration: const InputDecoration(
                           icon: Icon(Icons.circle, color: Colors.green),
                           border: UnderlineInputBorder(),
@@ -64,35 +105,51 @@ class _AddMetricState extends State<AddMetric> {
                       ),
                     ),
                     Padding(
-                      padding:
-                          const EdgeInsets.symmetric(horizontal: 8, vertical: 16),
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 8, vertical: 16),
                       child: TextFormField(
+                        maxLength: 100,
+                        controller: _lowRiskController,
                         decoration: const InputDecoration(
-                          icon: Icon(Icons.circle, color: Colors.green),
+                          icon: Icon(Icons.circle, color: Colors.yellow),
                           border: UnderlineInputBorder(),
                           labelText: 'Low risk description',
                         ),
                       ),
                     ),
                     Padding(
-                      padding:
-                          const EdgeInsets.symmetric(horizontal: 8, vertical: 16),
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 8, vertical: 16),
                       child: TextFormField(
+                        maxLength: 100,
+                        controller: _reasonableRiskController,
                         decoration: const InputDecoration(
-                          icon: Icon(Icons.circle, color: Colors.yellow),
+                          icon: Icon(Icons.circle, color: Colors.orange),
                           border: UnderlineInputBorder(),
                           labelText: 'Reasonable risk description',
                         ),
                       ),
                     ),
                     Padding(
-                      padding:
-                          const EdgeInsets.symmetric(horizontal: 8, vertical: 16),
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 8, vertical: 16),
                       child: TextFormField(
+                        maxLength: 100,
+                        controller: _highRiskController,
                         decoration: const InputDecoration(
                           icon: Icon(Icons.circle, color: Colors.red),
                           border: UnderlineInputBorder(),
                           labelText: 'High risk description',
+                        ),
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 8, vertical: 16),
+                      child: Center(
+                        child: ElevatedButton(
+                          onPressed: addToMetricDB,
+                          child: Text("Add"),
                         ),
                       ),
                     ),
