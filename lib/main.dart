@@ -24,7 +24,6 @@ class MyApp extends StatefulWidget {
 }
 
 class MyAppState extends State<MyApp> {
-  //List<Metric>? _myMetrics = MyMetrics().returnMyMetrics();
 
   int? _pageIndex = 0;
   final screens = [
@@ -33,6 +32,12 @@ class MyAppState extends State<MyApp> {
     Center(child: Text("Nothing yet", style: TextStyle(fontSize: 60))),
   ];
 
+  changeScreen(){
+    setState(() {
+      screens;
+    });
+    return screens[_pageIndex!];
+  }
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -52,7 +57,8 @@ class MyAppState extends State<MyApp> {
             //Icon(Icons.settings),
           ],
         ),
-        body: screens[_pageIndex!],
+        body: changeScreen(),
+        //screens[_pageIndex!],
       ),
     );
   }

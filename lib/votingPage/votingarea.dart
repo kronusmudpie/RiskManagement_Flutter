@@ -3,11 +3,13 @@
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/material.dart';
+import 'package:riskmanagement/classes/MetricsDB.dart';
 
 import 'package:riskmanagement/classes/Risk.dart';
 
 class VotingArea extends StatefulWidget {
   final Risk _myRisk;
+
   VotingArea(@required this._myRisk);
 
   @override
@@ -15,6 +17,16 @@ class VotingArea extends StatefulWidget {
 }
 
 class _VotingAreaState extends State<VotingArea> {
+  Color _buttonColor = Color.fromARGB(255, 104, 104, 104);
+
+  void addVote() async {
+    widget._myRisk.incrementVote();
+
+    setState(() {_buttonColor = Colors.blue;});
+    await Future.delayed(Duration(milliseconds: 300));
+    setState(() {_buttonColor = Color.fromARGB(255, 104, 104, 104);});
+  }
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -51,23 +63,17 @@ class _VotingAreaState extends State<VotingArea> {
             ),
           ),
           Container(
-            width: 40,
-            padding: EdgeInsets.all(10),
-            decoration: BoxDecoration(
-              color: Color.fromARGB(255, 226, 226, 226),
-              borderRadius: BorderRadius.all(
-                Radius.circular(10),
-              ),
-            ),
-            child: Center(
-              child: Text(
-                widget._myRisk.numberOfVotes.toString(),
-                style: TextStyle(
-                  decoration: TextDecoration.none,
-                  fontSize: 15,
-                  color: Colors.black,
+            child: TextButton(
+              style: TextButton.styleFrom(
+                splashFactory: NoSplash.splashFactory,
+                primary: _buttonColor,
+                textStyle: const TextStyle(
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
                 ),
               ),
+              onPressed: addVote,
+              child: Icon(Icons.plus_one),
             ),
           ),
         ],

@@ -15,7 +15,7 @@ class VotingPage extends StatefulWidget {
 }
 
 class _VotingPageState extends State<VotingPage> {
-  List<Metric> _myMetrics = MetricsDB().metricDB!;
+  List<Metric> _myMetrics = MetricsDB.metricDB!;
   int _activeIndex = 0;
 
   // AnimationController? _controller;

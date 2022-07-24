@@ -18,7 +18,7 @@ class HomePage extends StatefulWidget {
 }
 
 class HomePageState extends State<HomePage> {
-  List<Metric>? _myMetrics = MetricsDB().metricDB;
+  List<Metric>? _myMetrics = MetricsDB.metricDB;
 
 
   double calculateOverallRisk() {
