@@ -42,6 +42,7 @@ class _VotingPageState extends State<VotingPage> {
     return Scaffold(
       body: SafeArea(
         child: Container(
+          width: double.infinity,
           decoration: BoxDecoration(
             gradient: LinearGradient(
               begin: Alignment.bottomCenter,
@@ -56,6 +57,9 @@ class _VotingPageState extends State<VotingPage> {
           child: Column(
             children: [
               Container(
+                constraints: BoxConstraints(
+                  maxHeight: 500,
+                ),
                 margin: EdgeInsets.symmetric(vertical: 40),
                 child: CarouselSlider.builder(
                   itemCount: _myMetrics.length,
@@ -66,6 +70,7 @@ class _VotingPageState extends State<VotingPage> {
                     onPageChanged: (index, reason) {
                       setState((() => _activeIndex = index));
                     },
+                    initialPage: _activeIndex,
                   ),
                   itemBuilder: (context, index, realIndex) {
                     return buildTitle(
@@ -75,6 +80,9 @@ class _VotingPageState extends State<VotingPage> {
                 ),
               ),
               Container(
+                constraints: BoxConstraints(
+                  maxWidth: 700,
+                ),
                 child: Column(
                   children: [
                     ...(_myMetrics.elementAt(_activeIndex).riskListDesc)

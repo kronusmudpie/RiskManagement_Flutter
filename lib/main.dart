@@ -32,7 +32,6 @@ class MyAppState extends State<MyApp> {
   ];
 
   changeScreen() {
-    setState() => screens;
     return screens[_pageIndex!];
   }
 
