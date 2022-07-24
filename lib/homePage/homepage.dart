@@ -74,10 +74,10 @@ class HomePageState extends State<HomePage> {
                 ],
               ),
             ),
-            padding: EdgeInsets.symmetric(
-              horizontal: 15,
-              vertical: 10,
-            ),
+            // padding: EdgeInsets.symmetric(
+            //   horizontal: 15,
+            //   vertical: 10,
+            // ),
             child: Column(
               children: <Widget>[
                 StatusBar(calculateOverallRisk()),
