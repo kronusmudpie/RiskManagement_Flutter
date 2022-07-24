@@ -49,7 +49,7 @@ class MyAppState extends State<MyApp> {
           items: [
             Icon(Icons.home),
             Icon(Icons.article),
-            Icon(Icons.settings),
+            //Icon(Icons.settings),
           ],
         ),
         body: screens[_pageIndex!],

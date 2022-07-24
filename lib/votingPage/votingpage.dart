@@ -7,6 +7,7 @@ import '../classes/Metric.dart';
 import '../classes/MetricsDB.dart';
 import '../styles/metricContainer.dart';
 import '../styles/riskContainer.dart';
+import './votingarea.dart';
 
 class VotingPage extends StatefulWidget {
   @override
@@ -78,7 +79,7 @@ class _VotingPageState extends State<VotingPage> {
                   children: [
                     ...(_myMetrics.elementAt(_activeIndex).riskListDesc)
                         .map((currMetric) {
-                      return RiskContainer(
+                      return VotingArea(
                         currMetric,
                       );
                     }).toList(),

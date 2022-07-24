@@ -1,13 +1,20 @@
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
+
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/material.dart';
 
 import 'package:riskmanagement/classes/Risk.dart';
 
-class RiskContainer extends StatelessWidget {
+class VotingArea extends StatefulWidget {
   final Risk _myRisk;
-  RiskContainer(@required this._myRisk);
+  VotingArea(@required this._myRisk);
 
+  @override
+  State<VotingArea> createState() => _VotingAreaState();
+}
+
+class _VotingAreaState extends State<VotingArea> {
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -33,9 +40,8 @@ class RiskContainer extends StatelessWidget {
         children: [
           Expanded(
             child: Container(
-              //padding: EdgeInsets.symmetric(horizontal: 5),
               child: Text(
-                _myRisk.riskDesc.toString(),
+                widget._myRisk.riskDesc.toString(),
                 style: TextStyle(
                   decoration: TextDecoration.none,
                   fontSize: 15,
@@ -47,7 +53,6 @@ class RiskContainer extends StatelessWidget {
           Container(
             width: 40,
             padding: EdgeInsets.all(10),
-            //margin: EdgeInsets.all(10),
             decoration: BoxDecoration(
               color: Color.fromARGB(255, 226, 226, 226),
               borderRadius: BorderRadius.all(
@@ -56,7 +61,7 @@ class RiskContainer extends StatelessWidget {
             ),
             child: Center(
               child: Text(
-                _myRisk.numberOfVotes.toString(),
+                widget._myRisk.numberOfVotes.toString(),
                 style: TextStyle(
                   decoration: TextDecoration.none,
                   fontSize: 15,

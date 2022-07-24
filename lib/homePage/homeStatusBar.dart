@@ -18,7 +18,7 @@ class StatusBar extends StatelessWidget {
       Color.fromARGB(255, 0, 255, 21),
     ],
     [
-      Color.fromARGB(255, 204, 207, 0),
+      Color.fromARGB(255, 212, 216, 2),
       Color.fromARGB(255, 221, 224, 17),
       Color.fromARGB(255, 251, 255, 31),
     ],
@@ -59,7 +59,8 @@ class StatusBar extends StatelessWidget {
             Color.fromARGB(255, 218, 216, 216),
           ],
         ),
-        borderRadius: BorderRadius.only(bottomLeft: Radius.circular(25), bottomRight: Radius.circular(25)),
+        borderRadius: BorderRadius.only(
+            bottomLeft: Radius.circular(25), bottomRight: Radius.circular(25)),
       ),
       padding: EdgeInsets.symmetric(vertical: 25),
       width: double.infinity,
@@ -82,6 +83,8 @@ class StatusBar extends StatelessWidget {
                   child: Container(
                     decoration: BoxDecoration(
                       gradient: LinearGradient(
+                        end: Alignment.topRight,
+                        begin: Alignment.bottomLeft,
                         colors: _myColor!,
                       ),
                     ),
