@@ -21,6 +21,7 @@ class Metric {
   }
 
   void _calculateTotalVotes() {
+    this.totalVotes = 0;
     riskListDesc.forEach((currRisk) {
       this.totalVotes += currRisk.numberOfVotes;
     });
