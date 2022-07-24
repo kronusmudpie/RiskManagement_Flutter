@@ -31,7 +31,7 @@ class RiskList extends StatelessWidget {
                       backgroundColor: MaterialStateProperty.all(Colors.blue),
                     ),
                     child: Icon(Icons.add),
-                    onPressed: (){},
+                    onPressed: () {},
                   ),
                 ),
               )

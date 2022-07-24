@@ -97,7 +97,16 @@ class _VotingPageState extends State<VotingPage> {
       width: double.infinity,
       height: 500,
       decoration: BoxDecoration(
-        color: Colors.blue,
+        gradient: LinearGradient(
+          end: Alignment.topRight,
+          begin: Alignment.bottomLeft,
+          colors: [
+            Color.fromARGB(255, 20, 122, 206),
+            Color.fromARGB(255, 36, 150, 243),
+            Color.fromARGB(255, 85, 178, 255),
+            Color.fromARGB(255, 144, 204, 253),
+          ],
+        ),
         borderRadius: BorderRadius.circular(10),
       ),
       child: Center(
