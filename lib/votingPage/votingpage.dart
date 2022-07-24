@@ -83,15 +83,17 @@ class _VotingPageState extends State<VotingPage> {
                 constraints: BoxConstraints(
                   maxWidth: 700,
                 ),
-                child: Column(
-                  children: [
-                    ...(_myMetrics.elementAt(_activeIndex).riskListDesc)
-                        .map((currMetric) {
-                      return VotingArea(
-                        currMetric,
-                      );
-                    }).toList(),
-                  ],
+                child: Center(
+                  child: Column(
+                    children: [
+                      ...(_myMetrics.elementAt(_activeIndex).riskListDesc)
+                          .map((currMetric) {
+                        return VotingArea(
+                          currMetric,
+                        );
+                      }).toList(),
+                    ],
+                  ),
                 ),
               ),
             ],

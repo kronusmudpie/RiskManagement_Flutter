@@ -15,6 +15,7 @@ class _AddMetricState extends State<AddMetric> {
     return Scaffold(
       body: SafeArea(
         child: Container(
+          height: double.infinity,
           width: double.infinity,
           decoration: BoxDecoration(
             gradient: LinearGradient(
@@ -27,10 +28,78 @@ class _AddMetricState extends State<AddMetric> {
               ],
             ),
           ),
-          child: Column(
-            children: <Widget>[
-              Text("TEST"),
-            ],
+          child: SingleChildScrollView(
+            child: Column(
+              children: [
+                SizedBox(
+                  height: 15,
+                ),
+                Text(
+                  "Add a Metric",
+                  style: TextStyle(
+                    fontSize: 30,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                Column(
+                  children: [
+                    Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 8, vertical: 16),
+                      child: TextField(
+                        decoration: InputDecoration(
+                          border: OutlineInputBorder(),
+                          hintText: 'Enter a metric title',
+                        ),
+                      ),
+                    ),
+                    Padding(
+                      padding:
+                          const EdgeInsets.symmetric(horizontal: 8, vertical: 16),
+                      child: TextFormField(
+                        decoration: const InputDecoration(
+                          icon: Icon(Icons.circle, color: Colors.green),
+                          border: UnderlineInputBorder(),
+                          labelText: 'Minimal risk description',
+                        ),
+                      ),
+                    ),
+                    Padding(
+                      padding:
+                          const EdgeInsets.symmetric(horizontal: 8, vertical: 16),
+                      child: TextFormField(
+                        decoration: const InputDecoration(
+                          icon: Icon(Icons.circle, color: Colors.green),
+                          border: UnderlineInputBorder(),
+                          labelText: 'Low risk description',
+                        ),
+                      ),
+                    ),
+                    Padding(
+                      padding:
+                          const EdgeInsets.symmetric(horizontal: 8, vertical: 16),
+                      child: TextFormField(
+                        decoration: const InputDecoration(
+                          icon: Icon(Icons.circle, color: Colors.yellow),
+                          border: UnderlineInputBorder(),
+                          labelText: 'Reasonable risk description',
+                        ),
+                      ),
+                    ),
+                    Padding(
+                      padding:
+                          const EdgeInsets.symmetric(horizontal: 8, vertical: 16),
+                      child: TextFormField(
+                        decoration: const InputDecoration(
+                          icon: Icon(Icons.circle, color: Colors.red),
+                          border: UnderlineInputBorder(),
+                          labelText: 'High risk description',
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ],
+            ),
           ),
         ),
       ),
