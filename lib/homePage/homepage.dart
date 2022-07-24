@@ -8,24 +8,27 @@ import 'package:riskmanagement/classes/Risk.dart';
 import 'package:riskmanagement/classes/createMetrics.dart';
 import 'package:riskmanagement/styles/navigationBar.dart';
 
+import '../classes/MetricsDB.dart';
+
 class HomePage extends StatefulWidget {
-  const HomePage();
+  HomePage();
 
   @override
   State<HomePage> createState() => HomePageState();
 }
 
 class HomePageState extends State<HomePage> {
-  List<Metric> _myMetrics = createMetrics.create()!;
+  List<Metric>? _myMetrics = MetricsDB().metricDB;
+
 
   double calculateOverallRisk() {
-    if (_myMetrics.length == 0) {//Nothing in the List
+    if (_myMetrics!.length == 0) {//Nothing in the List
       return 0;
     }
     double tempRiskWeight = 0;
     int numberOfNoVotes = 0; // Count the metrics with no votes
 
-    _myMetrics.forEach((currMetric) {
+    _myMetrics!.forEach((currMetric) {
       currMetric.computeMetricRiskweight();
       if (currMetric.totalRiskWeight == -1) {
         numberOfNoVotes++;
@@ -33,11 +36,11 @@ class HomePageState extends State<HomePage> {
         tempRiskWeight += currMetric.totalRiskWeight;
       }
     });
-    if (_myMetrics.length == numberOfNoVotes) {//No votes yet
+    if (_myMetrics!.length == numberOfNoVotes) {//No votes yet
       return 0;
     }
 
-    tempRiskWeight /= (_myMetrics.length - numberOfNoVotes); //Do not count the ones with no votes
+    tempRiskWeight /= (_myMetrics!.length - numberOfNoVotes); //Do not count the ones with no votes
     setState(() {});
     return tempRiskWeight;
   }
@@ -55,7 +58,7 @@ class HomePageState extends State<HomePage> {
   }
 
   List<Metric> sortByRiskiness(List<Metric> sortThis) {
-    return _myMetrics
+    return _myMetrics!
       ..sort(((a, b) => b.totalRiskWeight.compareTo(a.totalRiskWeight)));
   }
   @override
@@ -74,16 +77,12 @@ class HomePageState extends State<HomePage> {
                 ],
               ),
             ),
-            // padding: EdgeInsets.symmetric(
-            //   horizontal: 15,
-            //   vertical: 10,
-            // ),
             child: Column(
               children: <Widget>[
                 StatusBar(calculateOverallRisk()),
                 Flexible(
                   child: SingleChildScrollView(
-                    child: RiskList(sortByRiskiness(_myMetrics)),
+                    child: RiskList(sortByRiskiness(_myMetrics!)),
                   ),
                 )
               ],
