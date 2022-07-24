@@ -48,7 +48,7 @@ class MyAppState extends State<MyApp> {
           height: 60,
           items: [
             Icon(Icons.home),
-            Icon(Icons.favorite),
+            Icon(Icons.article),
             Icon(Icons.settings),
           ],
         ),
