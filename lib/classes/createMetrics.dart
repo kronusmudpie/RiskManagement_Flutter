@@ -8,7 +8,7 @@ class createMetrics {
     List<Metric> returnThis = <Metric>[];
 
     Metric tempMetric = Metric("The total number of defects");
-    Risk tempRisk = Risk("The number of defects are well below where expected", 0); tempRisk.numberOfVotes = 10;
+    Risk tempRisk = Risk("The number of defects are well below where expected", 0);// tempRisk.numberOfVotes = 10;
     tempMetric.addToList(tempRisk);
     tempRisk = Risk("The number of defects are about where we expect", 1);
     tempMetric.addToList(tempRisk);
@@ -21,7 +21,7 @@ class createMetrics {
     tempMetric = Metric("Schedule feasibility");
     tempRisk = Risk("The project can be easily completed in the scheduled time", 0);
     tempMetric.addToList(tempRisk);
-    tempRisk = Risk("The project can be completed in the scheduled time with strict time management", 1); tempRisk.numberOfVotes = 10;
+    tempRisk = Risk("The project can be completed in the scheduled time with strict time management", 1); //tempRisk.numberOfVotes = 10;
     tempMetric.addToList(tempRisk);
     tempRisk = Risk("The project may be completed in the scheduled time, but will require crunch", 2);
     tempMetric.addToList(tempRisk);
@@ -34,7 +34,7 @@ class createMetrics {
     tempMetric.addToList(tempRisk);
     tempRisk = Risk("The design is mostly complete and no major problems are noted", 1);
     tempMetric.addToList(tempRisk);
-    tempRisk = Risk("The design is incomplete and one major problem is noted with strategies to mitigate", 2); tempRisk.numberOfVotes = 10;
+    tempRisk = Risk("The design is incomplete and one major problem is noted with strategies to mitigate", 2);// tempRisk.numberOfVotes = 10;
     tempMetric.addToList(tempRisk);
     tempRisk = Risk("The design is incomplete, has several major problems with no plans to mitigate", 3);
     tempMetric.addToList(tempRisk);
@@ -47,7 +47,7 @@ class createMetrics {
     tempMetric.addToList(tempRisk);
     tempRisk = Risk("The implementation is slightly behind schedule", 2);
     tempMetric.addToList(tempRisk);
-    tempRisk = Risk("The implementation is far behind schedule", 3); tempRisk.numberOfVotes = 40;
+    tempRisk = Risk("The implementation is far behind schedule", 3); //tempRisk.numberOfVotes = 40;
 
     tempMetric.addToList(tempRisk);
     returnThis.add(tempMetric);

@@ -4,6 +4,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
+import 'package:riskmanagement/addMetricPage/addMetric.dart';
 import 'package:riskmanagement/classes/Metric.dart';
 import 'package:riskmanagement/classes/MetricsDB.dart';
 
@@ -20,24 +21,21 @@ class MyApp extends StatefulWidget {
   State<StatefulWidget> createState() {
     return MyAppState();
   }
-
 }
 
 class MyAppState extends State<MyApp> {
-
   int? _pageIndex = 0;
   final screens = [
     HomePage(),
+    AddMetric(),
     VotingPage(),
-    Center(child: Text("Nothing yet", style: TextStyle(fontSize: 60))),
   ];
 
-  changeScreen(){
-    setState(() {
-      screens;
-    });
+  changeScreen() {
+    setState() => screens;
     return screens[_pageIndex!];
   }
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -53,12 +51,14 @@ class MyAppState extends State<MyApp> {
           height: 60,
           items: [
             Icon(Icons.home),
+            Icon(
+              Icons.add,
+              color: Colors.blue,
+            ),
             Icon(Icons.article),
-            //Icon(Icons.settings),
           ],
         ),
         body: changeScreen(),
-        //screens[_pageIndex!],
       ),
     );
   }
