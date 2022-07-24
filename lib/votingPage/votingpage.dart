@@ -2,12 +2,18 @@
 
 import 'package:flutter/material.dart';
 
+import '../classes/Metric.dart';
+import '../classes/MetricsDB.dart';
+
 class VotingPage extends StatefulWidget {
   @override
   State<VotingPage> createState() => _VotingPageState();
 }
 
 class _VotingPageState extends State<VotingPage> {
+  List<Metric>? _myMetrics = MetricsDB().metricDB;
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

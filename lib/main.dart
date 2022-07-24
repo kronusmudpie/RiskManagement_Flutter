@@ -45,6 +45,7 @@ class MyAppState extends State<MyApp> {
               _pageIndex = index;
             });
           },
+          height: 60,
           items: [
             Icon(Icons.home),
             Icon(Icons.favorite),

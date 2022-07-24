@@ -58,6 +58,7 @@ class HomePageState extends State<HomePage> {
   }
 
   List<Metric> sortByRiskiness(List<Metric> sortThis) {
+    setState(() {});
     return _myMetrics!
       ..sort(((a, b) => b.totalRiskWeight.compareTo(a.totalRiskWeight)));
   }

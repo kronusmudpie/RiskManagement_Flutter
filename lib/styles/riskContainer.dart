@@ -17,13 +17,15 @@ class RiskContainer extends StatelessWidget {
       decoration: BoxDecoration(
         //color: Color.fromARGB(255, 219, 238, 243),
         gradient: LinearGradient(
-            begin: Alignment.topLeft,
-            end: Alignment.bottomRight,
-            colors: [
-              Color.fromARGB(255, 39, 176, 108),
-              Colors.orange,
-              Colors.red
-            ]),
+          end: Alignment.bottomCenter,
+          begin: Alignment.topCenter,
+          colors: [
+            Color.fromARGB(243, 170, 175, 184),
+            Color.fromARGB(255, 238, 238, 238),
+            Color.fromARGB(255, 238, 238, 238),
+            Color.fromARGB(255, 218, 216, 216),
+          ],
+        ),
         borderRadius: BorderRadius.all(
           Radius.circular(10),
         ),
