@@ -5,12 +5,9 @@
 import 'package:flutter/material.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:riskmanagement/addMetricPage/addMetric.dart';
-import 'package:riskmanagement/classes/Metric.dart';
-import 'package:riskmanagement/classes/MetricsDB.dart';
 
 import 'homePage/homepage.dart';
 import 'votingPage/votingpage.dart';
-import './classes/myMetrics.dart';
 
 void main() {
   runApp(MyApp());
@@ -25,6 +22,7 @@ class MyApp extends StatefulWidget {
 
 class MyAppState extends State<MyApp> {
   int? _pageIndex = 0;
+
   final screens = [
     HomePage(),
     VotingPage(),
