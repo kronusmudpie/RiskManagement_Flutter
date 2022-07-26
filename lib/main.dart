@@ -4,10 +4,10 @@
 
 import 'package:flutter/material.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
-import 'package:riskmanagement/addMetricPage/addMetric.dart';
+import 'package:riskmanagement/addMetricPage/add_metric.dart';
 
 import 'homePage/homepage.dart';
-import 'votingPage/votingpage.dart';
+import 'votingPage/voting_page.dart';
 
 void main() {
   runApp(MyApp());

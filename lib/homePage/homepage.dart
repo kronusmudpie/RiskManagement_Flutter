@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
-import 'package:riskmanagement/homePage/homeStatusBar.dart';
-import 'package:riskmanagement/homePage/homeRiskLists.dart';
-import 'package:riskmanagement/classes/Metric.dart';
+import 'package:riskmanagement/homePage/home_statusbar.dart';
+import 'package:riskmanagement/homePage/home_risk_list.dart';
+import 'package:riskmanagement/classes/metric.dart';
 
-import '../classes/MetricsDB.dart';
+import '../classes/metrics_db.dart';
 
 class HomePage extends StatefulWidget {
 

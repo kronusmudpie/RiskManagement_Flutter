@@ -3,7 +3,7 @@
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/material.dart';
-import 'package:riskmanagement/classes/MetricsDB.dart';
+import 'package:riskmanagement/classes/metrics_db.dart';
 
 import 'package:riskmanagement/classes/Risk.dart';
 

@@ -1,7 +1,7 @@
 import 'package:riskmanagement/classes/Risk.dart';
 
-import './Metric.dart';
-import './myMetrics.dart';
+import 'metric.dart';
+import 'my_metrics.dart';
 
 class MetricsDB{
   static List<Metric>? metricDB = MyMetrics().returnMyMetrics();

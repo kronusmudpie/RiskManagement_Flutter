@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import '/styles/metricContainer.dart';
+import '../styles/metric_container.dart';
 
-import 'package:riskmanagement/classes/Metric.dart';
+import 'package:riskmanagement/classes/metric.dart';
 
 class RiskList extends StatelessWidget {
   final List<Metric> _myMetricsList;

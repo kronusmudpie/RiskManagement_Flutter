@@ -1,7 +1,7 @@
-import 'package:riskmanagement/classes/createMetrics.dart';
+import 'package:riskmanagement/classes/create_metrics.dart';
 
-import './Metric.dart';
-import './createMetrics.dart';
+import 'metric.dart';
+import 'create_metrics.dart';
 
 class MyMetrics {
   List<Metric>? _myMetric;

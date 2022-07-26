@@ -3,9 +3,9 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
 
-import '../styles/metricContainer.dart';
-import 'package:riskmanagement/classes/Metric.dart';
-import 'package:riskmanagement/styles/riskContainer.dart';
+import '../styles/metric_container.dart';
+import 'package:riskmanagement/classes/metric.dart';
+import 'package:riskmanagement/styles/risk_container.dart';
 
 class MetricInfoBuilder {
   final MetricContainer? myMetricContainer;

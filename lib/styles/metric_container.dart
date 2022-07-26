@@ -2,8 +2,8 @@
 
 import 'package:flutter/material.dart';
 
-import 'package:riskmanagement/homePage/metricInfoBuilder.dart';
-import 'package:riskmanagement/classes/Metric.dart';
+import 'package:riskmanagement/homePage/metric_info_builder.dart';
+import 'package:riskmanagement/classes/metric.dart';
 
 class MetricContainer extends StatelessWidget {
   final double _MYRADIUS = 10.0;

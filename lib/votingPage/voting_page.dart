@@ -3,9 +3,9 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 
-import '../classes/Metric.dart';
-import '../classes/MetricsDB.dart';
-import './votingarea.dart';
+import '../classes/metric.dart';
+import '../classes/metrics_db.dart';
+import 'voting_area.dart';
 
 class VotingPage extends StatefulWidget {
   @override

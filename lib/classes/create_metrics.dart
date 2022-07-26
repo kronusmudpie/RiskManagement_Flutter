@@ -1,6 +1,6 @@
-import 'package:riskmanagement/classes/Metric.dart';
+import 'package:riskmanagement/classes/metric.dart';
 
-import 'Metric.dart';
+import 'metric.dart';
 import 'Risk.dart';
 
 class CreateMetrics {
