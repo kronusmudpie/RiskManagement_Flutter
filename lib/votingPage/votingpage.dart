@@ -5,8 +5,6 @@ import 'package:flutter/material.dart';
 
 import '../classes/Metric.dart';
 import '../classes/MetricsDB.dart';
-import '../styles/metricContainer.dart';
-import '../styles/riskContainer.dart';
 import './votingarea.dart';
 
 class VotingPage extends StatefulWidget {
@@ -15,27 +13,8 @@ class VotingPage extends StatefulWidget {
 }
 
 class _VotingPageState extends State<VotingPage> {
-  List<Metric> _myMetrics = MetricsDB.metricDB!;
+  final List<Metric> _myMetrics = MetricsDB.metricDB!;
   int _activeIndex = 0;
-
-  // AnimationController? _controller;
-  // Animation<double>? _animation;
-
-  // @override
-  // initState() {
-  //   super.initState();
-  //   _controller = AnimationController(
-  //     duration: const Duration(seconds: 3),
-  //     vsync: this,
-  //   )..repeat(reverse: false);
-  //   _animation = CurvedAnimation(parent: _controller!, curve: Curves.easeIn);
-  // }
-
-  // @override
-  // void dispose() {
-  //   _controller!.dispose();
-  //   super.dispose();
-  // }
 
   @override
   Widget build(BuildContext context) {
@@ -47,7 +26,7 @@ class _VotingPageState extends State<VotingPage> {
             gradient: LinearGradient(
               begin: Alignment.bottomCenter,
               end: Alignment.topCenter,
-              colors: [
+              colors: const [
                 Color.fromARGB(243, 197, 200, 206),
                 Colors.white,
                 Colors.white,
@@ -111,7 +90,7 @@ class _VotingPageState extends State<VotingPage> {
         gradient: LinearGradient(
           end: Alignment.topRight,
           begin: Alignment.bottomLeft,
-          colors: [
+          colors: const [
             Color.fromARGB(255, 20, 122, 206),
             Color.fromARGB(255, 36, 150, 243),
             Color.fromARGB(255, 85, 178, 255),

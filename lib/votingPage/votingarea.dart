@@ -10,7 +10,7 @@ import 'package:riskmanagement/classes/Risk.dart';
 class VotingArea extends StatefulWidget {
   final Risk _myRisk;
 
-  VotingArea(@required this._myRisk);
+  VotingArea(this._myRisk);
 
   @override
   State<VotingArea> createState() => _VotingAreaState();
@@ -51,30 +51,26 @@ class _VotingAreaState extends State<VotingArea> {
       child: Row(
         children: [
           Expanded(
-            child: Container(
-              child: Text(
-                widget._myRisk.riskDesc.toString(),
-                style: TextStyle(
-                  decoration: TextDecoration.none,
-                  fontSize: 15,
-                  color: Colors.black,
-                ),
+            child: Text(
+              widget._myRisk.riskDesc.toString(),
+              style: TextStyle(
+                decoration: TextDecoration.none,
+                fontSize: 15,
+                color: Colors.black,
               ),
             ),
           ),
-          Container(
-            child: TextButton(
-              style: TextButton.styleFrom(
-                splashFactory: NoSplash.splashFactory,
-                primary: _buttonColor,
-                textStyle: const TextStyle(
-                  fontSize: 20,
-                  fontWeight: FontWeight.bold,
-                ),
+          TextButton(
+            style: TextButton.styleFrom(
+              splashFactory: NoSplash.splashFactory,
+              primary: _buttonColor,
+              textStyle: const TextStyle(
+                fontSize: 20,
+                fontWeight: FontWeight.bold,
               ),
-              onPressed: addVote,
-              child: Icon(Icons.plus_one),
             ),
+            onPressed: addVote,
+            child: Icon(Icons.plus_one),
           ),
         ],
       ),

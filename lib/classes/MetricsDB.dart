@@ -8,14 +8,14 @@ class MetricsDB{
 
   static void addToMetric(String metricTitle, String minRisk, String lowRisk,
   String reasonableRisk, String highRisk ){
-    Metric tempMetric = new Metric(metricTitle);  //Create temp Metric to add
-    Risk tempRisk = new Risk(minRisk, 0);
+    Metric tempMetric = Metric(metricTitle);  //Create temp Metric to add
+    Risk tempRisk = Risk(minRisk, 0);
     tempMetric.riskListDesc.add(tempRisk);  //Add Minimal risk
-    tempRisk = new Risk(lowRisk, 1);
+    tempRisk = Risk(lowRisk, 1);
     tempMetric.riskListDesc.add(tempRisk);  //Add Low Risk
-    tempRisk = new Risk(reasonableRisk, 2);
+    tempRisk = Risk(reasonableRisk, 2);
     tempMetric.riskListDesc.add(tempRisk);  //Add Reasonable Risk
-    tempRisk = new Risk(highRisk, 3);
+    tempRisk = Risk(highRisk, 3);
     tempMetric.riskListDesc.add(tempRisk);  //Add high risk
   
     metricDB!.add(tempMetric);

@@ -1,4 +1,3 @@
-
 class Risk{
   String? riskDesc;
   int numberOfVotes = 0;

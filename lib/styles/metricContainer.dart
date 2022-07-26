@@ -7,7 +7,7 @@ import 'package:riskmanagement/classes/Metric.dart';
 
 class MetricContainer extends StatelessWidget {
   final double _MYRADIUS = 10.0;
-  Metric _myMetric; 
+  final Metric _myMetric; 
   MetricContainer(@required this._myMetric){
     _myColor = MaterialStateProperty.all(riskColorChooser());
   }

@@ -4,9 +4,9 @@ import '/styles/metricContainer.dart';
 import 'package:riskmanagement/classes/Metric.dart';
 
 class RiskList extends StatelessWidget {
-  List<Metric> _myMetricsList;
+  final List<Metric> _myMetricsList;
 
-  RiskList(@required this._myMetricsList);
+  RiskList(this._myMetricsList);
 
   @override
   Widget build(BuildContext context) {

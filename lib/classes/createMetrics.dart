@@ -3,7 +3,7 @@ import 'package:riskmanagement/classes/Metric.dart';
 import 'Metric.dart';
 import 'Risk.dart';
 
-class createMetrics {
+class CreateMetrics {
   static List<Metric>? create() {
     List<Metric> returnThis = <Metric>[];
 

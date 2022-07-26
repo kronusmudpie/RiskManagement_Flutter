@@ -1,41 +1,36 @@
-import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
 
 import 'package:riskmanagement/homePage/homeStatusBar.dart';
 import 'package:riskmanagement/homePage/homeRiskLists.dart';
 import 'package:riskmanagement/classes/Metric.dart';
-import 'package:riskmanagement/classes/Risk.dart';
-import 'package:riskmanagement/classes/createMetrics.dart';
-import 'package:riskmanagement/styles/navigationBar.dart';
 
 import '../classes/MetricsDB.dart';
 
 class HomePage extends StatefulWidget {
-  HomePage();
 
   @override
   State<HomePage> createState() => HomePageState();
 }
 
 class HomePageState extends State<HomePage> {
-  List<Metric>? _myMetrics = MetricsDB.metricDB;
+  final List<Metric>? _myMetrics = MetricsDB.metricDB;
 
 
   double calculateOverallRisk() {
-    if (_myMetrics!.length == 0) {//Nothing in the List
+    if (_myMetrics!.isEmpty) {//Nothing in the List
       return 0;
     }
     double tempRiskWeight = 0;
     int numberOfNoVotes = 0; // Count the metrics with no votes
 
-    _myMetrics!.forEach((currMetric) {
+    for (var currMetric in _myMetrics!) {
       currMetric.computeMetricRiskweight();
       if (currMetric.totalRiskWeight == -1) {
         numberOfNoVotes++;
       } else {
         tempRiskWeight += currMetric.totalRiskWeight;
       }
-    });
+    }
     if (_myMetrics!.length == numberOfNoVotes) {//No votes yet
       return 0;
     }
@@ -45,14 +40,14 @@ class HomePageState extends State<HomePage> {
     return tempRiskWeight;
   }
 
-  double? calculateRiskMultiplier(int _risklvl) {
-    if (_risklvl == 0) {
+  double? calculateRiskMultiplier(int risklvl) {
+    if (risklvl == 0) {
       return 0;
-    } else if (_risklvl == 1) {
+    } else if (risklvl == 1) {
       return 1 / 3;
-    } else if (_risklvl == 2) {
+    } else if (risklvl == 2) {
       return 2 / 3;
-    } else if (_risklvl == 3) {
+    } else if (risklvl == 3) {
       return 1;
     }
   }
@@ -67,7 +62,7 @@ class HomePageState extends State<HomePage> {
     return Scaffold(
         body: SafeArea(
           child: Container(
-            decoration: BoxDecoration(
+            decoration: const BoxDecoration(
               gradient: LinearGradient(
                 begin: Alignment.bottomCenter,
                 end: Alignment.topCenter,

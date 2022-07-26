@@ -7,7 +7,7 @@ class MyMetrics {
   List<Metric>? _myMetric;
 
   MyMetrics(){
-    _myMetric = createMetrics.create();
+    _myMetric = CreateMetrics.create();
   }
 
   List<Metric>? returnMyMetrics(){

@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 class StatusBar extends StatelessWidget {
   final double _riskScore;
 
-  StatusBar(@required this._riskScore) {
+  StatusBar(this._riskScore) {
     statusColorChooser();
   }
 
@@ -52,7 +52,7 @@ class StatusBar extends StatelessWidget {
         gradient: LinearGradient(
           end: Alignment.bottomCenter,
           begin: Alignment.topCenter,
-          colors: [
+          colors: const [
             Color.fromARGB(243, 170, 175, 184),
             Color.fromARGB(255, 238, 238, 238),
             Color.fromARGB(255, 238, 238, 238),

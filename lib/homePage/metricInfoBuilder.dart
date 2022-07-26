@@ -2,16 +2,15 @@
 
 import 'dart:ui';
 import 'package:flutter/material.dart';
-import 'package:riskmanagement/homePage/homepage.dart';
 
 import '../styles/metricContainer.dart';
 import 'package:riskmanagement/classes/Metric.dart';
 import 'package:riskmanagement/styles/riskContainer.dart';
 
-class MetricInfoBuilder extends StatelessWidget {
+class MetricInfoBuilder {
   final MetricContainer? myMetricContainer;
   late final Metric? myMetric;
-  MetricInfoBuilder(@required this.myMetricContainer, @required this.myMetric);
+  MetricInfoBuilder(this.myMetricContainer, this.myMetric);
 
   late final OverlayEntry _overlayEntry;
 
@@ -24,7 +23,7 @@ class MetricInfoBuilder extends StatelessWidget {
   }
 
   void removeInfo() {
-    this._overlayEntry.remove();
+    _overlayEntry.remove();
   }
 
   Widget buildOverlay() => Stack(
@@ -36,11 +35,11 @@ class MetricInfoBuilder extends StatelessWidget {
             ),
             child: TextButton(
               onPressed: removeInfo,
-              child: Text(''),
               style: ElevatedButton.styleFrom(
                 minimumSize: Size(double.infinity, double.infinity),
                 splashFactory: NoSplash.splashFactory,
               ),
+              child: Text(''),
             ),
           ),
           SafeArea(
@@ -68,10 +67,4 @@ class MetricInfoBuilder extends StatelessWidget {
           ),
         ],
       );
-
-  @override
-  Widget build(BuildContext context) {
-    // TODO: implement build
-    throw UnimplementedError();
-  }
 }

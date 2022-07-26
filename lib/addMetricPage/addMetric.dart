@@ -1,8 +1,6 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import '../classes/MetricsDB.dart';
 
 class AddMetric extends StatefulWidget {
@@ -23,7 +21,6 @@ class _AddMetricState extends State<AddMetric> {
         _lowRiskController.text.isEmpty ||
         _reasonableRiskController.text.isEmpty ||
         _highRiskController.text.isEmpty) {
-      print("incomplete");
       return false;
     }
     return true;
