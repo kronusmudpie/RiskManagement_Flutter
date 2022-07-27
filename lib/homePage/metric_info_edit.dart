@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:riskmanagement/classes/metric.dart';
-import 'package:riskmanagement/homePage/homepage.dart';
-import 'package:riskmanagement/main.dart';
 
 class MetricEdit extends StatefulWidget {
   Metric _myMetricToEdit;

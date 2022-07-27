@@ -2,7 +2,6 @@
 
 import 'dart:ui';
 import 'package:flutter/material.dart';
-import 'package:riskmanagement/homePage/homepage.dart';
 
 import '../styles/metric_container.dart';
 import 'package:riskmanagement/classes/metric.dart';
@@ -61,7 +60,7 @@ class MetricInfoBuilder {
                 child: Icon(
                   Icons.edit,
                   size: 30,
-                  color: Colors.blue,
+                  color: Colors.black,
                 ),
                 onPressed: () => editInfo(context),
               ),

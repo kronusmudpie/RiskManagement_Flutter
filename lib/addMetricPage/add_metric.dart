@@ -111,6 +111,7 @@ class _AddMetricState extends State<AddMetric> {
                           icon: Icon(Icons.circle, color: Colors.yellow),
                           border: UnderlineInputBorder(),
                           labelText: 'Low risk description',
+                          
                         ),
                       ),
                     ),

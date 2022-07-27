@@ -22,6 +22,7 @@ class _VotingPageState extends State<VotingPage> {
       body: SafeArea(
         child: Container(
           width: double.infinity,
+          height: MediaQuery.of(context).size.height,
           decoration: BoxDecoration(
             gradient: LinearGradient(
               begin: Alignment.bottomCenter,
@@ -33,49 +34,51 @@ class _VotingPageState extends State<VotingPage> {
               ],
             ),
           ),
-          child: Column(
-            children: [
-              Container(
-                constraints: BoxConstraints(
-                  maxHeight: 500,
-                ),
-                margin: EdgeInsets.symmetric(vertical: 40),
-                child: CarouselSlider.builder(
-                  itemCount: _myMetrics.length,
-                  options: CarouselOptions(
-                    enlargeCenterPage: true,
-                    enableInfiniteScroll: false,
-                    autoPlay: false,
-                    onPageChanged: (index, reason) {
-                      setState((() => _activeIndex = index));
+          child: SingleChildScrollView(
+            child: Column(
+              children: [
+                Container(
+                  constraints: BoxConstraints(
+                    maxHeight: 500,
+                  ),
+                  margin: EdgeInsets.symmetric(vertical: 40),
+                  child: CarouselSlider.builder(
+                    itemCount: _myMetrics.length,
+                    options: CarouselOptions(
+                      enlargeCenterPage: true,
+                      enableInfiniteScroll: false,
+                      autoPlay: false,
+                      onPageChanged: (index, reason) {
+                        setState((() => _activeIndex = index));
+                      },
+                      initialPage: _activeIndex,
+                    ),
+                    itemBuilder: (context, index, realIndex) {
+                      return buildTitle(
+                        _myMetrics.elementAt(index).title.toString(),
+                      );
                     },
-                    initialPage: _activeIndex,
-                  ),
-                  itemBuilder: (context, index, realIndex) {
-                    return buildTitle(
-                      _myMetrics.elementAt(index).title.toString(),
-                    );
-                  },
-                ),
-              ),
-              Container(
-                constraints: BoxConstraints(
-                  maxWidth: 700,
-                ),
-                child: Center(
-                  child: Column(
-                    children: [
-                      ...(_myMetrics.elementAt(_activeIndex).riskListDesc)
-                          .map((currMetric) {
-                        return VotingArea(
-                          currMetric,
-                        );
-                      }).toList(),
-                    ],
                   ),
                 ),
-              ),
-            ],
+                Container(
+                  constraints: BoxConstraints(
+                    maxWidth: 700,
+                  ),
+                  child: Center(
+                    child: Column(
+                      children: [
+                        ...(_myMetrics.elementAt(_activeIndex).riskListDesc)
+                            .map((currMetric) {
+                          return VotingArea(
+                            currMetric,
+                          );
+                        }).toList(),
+                      ],
+                    ),
+                  ),
+                ),
+              ],
+            ),
           ),
         ),
       ),

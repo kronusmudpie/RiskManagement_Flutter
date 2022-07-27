@@ -9,7 +9,7 @@ class Metric {
   Metric(this.title);
 
   void addToList(Risk addThisRisk) {
-    this.riskListDesc.add(addThisRisk);
+    riskListDesc.add(addThisRisk);
   }
 
   String showRiskDesc(int index) {
@@ -21,16 +21,16 @@ class Metric {
   }
 
   void _calculateTotalVotes() {
-    this.totalVotes = 0;
+    totalVotes = 0;
     riskListDesc.forEach((currRisk) {
-      this.totalVotes += currRisk.numberOfVotes;
+      totalVotes += currRisk.numberOfVotes;
     });
   }
 
   void computeMetricRiskweight() { // Sets value of this.totalRiskValue 0 -> 1
     _calculateTotalVotes();
     if (totalVotes == 0) { //No votes yet
-      this.totalRiskWeight = -1;
+      totalRiskWeight = -1;
     } else {
       double multiplier = 0;
       double tempRiskValue = 0;
@@ -45,7 +45,7 @@ class Metric {
         tempRiskValue += multiplier * currRisk.numberOfVotes;
       });
       
-      this.totalRiskWeight = tempRiskValue / this.totalVotes;
+      totalRiskWeight = tempRiskValue / totalVotes;
     }
   }
 }
